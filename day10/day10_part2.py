@@ -1,5 +1,5 @@
-print "This is actually really simple:"
-print "\t- Run part 1 of this day"
-print "\t- Check the images folder"
-print "\t- Look for the image where you can read the string"
-print "\t- Check the number in the filename, this is your answer"
+print("This is actually really simple:")
+print("\t- Run part 1 of this day")
+print("\t- Check the images folder")
+print("\t- Look for the image where you can read the string")
+print("\t- Check the number in the filename, this is your answer")

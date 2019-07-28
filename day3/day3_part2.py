@@ -39,5 +39,5 @@ for (row, x, y, width, height) in claims:
             break
 
     if candidate:
-        print "Found a candidate: Claim with ID {}".format(row)
+        print("Found a candidate: Claim with ID {}".format(row))
         break

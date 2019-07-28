@@ -17,7 +17,7 @@ with open(join(dirname(realpath(__file__)), "input.txt")) as f:
             max_y = y
 
 # Loop through grid and find closest coordinate point
-print "Going to initialize grid of size {}x{}...".format(max_x, max_y)
+print("Going to initialize grid of size {}x{}...".format(max_x, max_y))
 
 grid = []
 for i in range(max_x+1):
@@ -38,7 +38,7 @@ for i in range(max_x+1):
                 # Found the same distance again, two coordinate points are nearest
                 grid[i][j] = (None, distance)
 
-print "Initialized. Going to count all entries..."
+print("Initialized. Going to count all entries...")
 
 # Loop through grid and count entries per coordinate point
 coordinate_bucket = dict()
@@ -48,8 +48,8 @@ for i in range(max_x+1):
             value = coordinate_bucket.get(grid[i][j][0], 0)
             coordinate_bucket[grid[i][j][0]] = value + 1
 
-print "Finished counting all entries. Currently has {} coordinate points in bucket".format(len(coordinate_bucket))
-print "Removing all coordinate points with contact to grid edge (infinite areas)..."
+print("Finished counting all entries. Currently has {} coordinate points in bucket".format(len(coordinate_bucket)))
+print("Removing all coordinate points with contact to grid edge (infinite areas)...")
 
 # Loop through top and bottom wall of grid and remove coordinates from bucket
 for j in range(max_y+1):
@@ -61,7 +61,7 @@ for i in range(max_x+1):
     coordinate_bucket.pop(grid[i][0][0], None)
     coordinate_bucket.pop(grid[i][max_y][0], None)
 
-print "Finished removing infinite areas. {} are left, need to find maximum".format(len(coordinate_bucket))
+print("Finished removing infinite areas. {} are left, need to find maximum".format(len(coordinate_bucket)))
 
 max_c = max(coordinate_bucket, key=coordinate_bucket.get)
-print "Area around coordinate point {} is the biggest one with an area of {}".format(max_c, coordinate_bucket[max_c])
+print("Area around coordinate point {} is the biggest one with an area of {}".format(max_c, coordinate_bucket[max_c]))

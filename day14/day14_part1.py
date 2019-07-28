@@ -17,4 +17,4 @@ while len(scores) < nr_scores + 10:
     elf_1 = (elf_1 + scores[elf_1] + 1) % len(scores)
     elf_2 = (elf_2 + scores[elf_2] + 1) % len(scores)
 
-print "Last 10 scores are: {}".format(''.join(map(str, scores[-10:])))
+print("Last 10 scores are: {}".format(''.join(map(str, scores[-10:]))))

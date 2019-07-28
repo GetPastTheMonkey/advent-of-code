@@ -17,5 +17,5 @@ for key_1, box_id_1 in enumerate(box_ids):
         if solution_1 is not None and solution_2 is not None:
             break
 
-print "Found the following words:\n\t{}\t{}".format(solution_1, solution_2)
-print "Solution: {}".format(''.join([c1 for c1, c2 in zip(solution_1, solution_2) if c1 == c2]))
+print("Found the following words:\n\t{}\t{}".format(solution_1, solution_2))
+print("Solution: {}".format(''.join([c1 for c1, c2 in zip(solution_1, solution_2) if c1 == c2])))

@@ -59,4 +59,4 @@ for sample in samples:
     if sample_count >= 3:
         counter += 1
 
-print "There were {} samples with 3 or more opcodes".format(counter)
+print("There were {} samples with 3 or more opcodes".format(counter))

@@ -25,8 +25,9 @@ def react_polymer(polymer):
 
     return changed, ''.join(return_polymer)
 
+
 polymer_changed = True
 while polymer_changed:
     polymer_changed, polymer_file = react_polymer(polymer_file)
 
-print "The resulting polymer is {} characters long".format(len(polymer_file))
+print("The resulting polymer is {} characters long".format(len(polymer_file)))

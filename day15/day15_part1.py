@@ -160,5 +160,5 @@ with open(join(dirname(realpath(__file__)), "input.txt")) as f:
 
 rounds, hp_sum = game.run()
 
-print "The battle lasted {} rounds and the HP sum of all alive units is {}".format(rounds, hp_sum)
-print "Solution: {}".format(rounds * hp_sum)
+print("The battle lasted {} rounds and the HP sum of all alive units is {}".format(rounds, hp_sum))
+print("Solution: {}".format(rounds * hp_sum))

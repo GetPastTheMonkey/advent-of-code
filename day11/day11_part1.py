@@ -44,4 +44,4 @@ for i in range(grid_width-2):
             max_x = i + 1
             max_y = j + 1
 
-print "({},{}) has maximum value of {}".format(max_x, max_y, maximum)
+print("({},{}) has maximum value of {}".format(max_x, max_y, maximum))

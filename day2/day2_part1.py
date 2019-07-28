@@ -15,5 +15,5 @@ with open(join(dirname(realpath(__file__)), "input.txt")) as f:
         if 3 in bucket.values():
             boxes_with_3 += 1
 
-print "There are {} boxes with two of any letter and {} with three of any letter".format(boxes_with_2, boxes_with_3)
-print "Checksum: {}".format(boxes_with_2 * boxes_with_3)
+print("There are {} boxes with two of any letter and {} with three of any letter".format(boxes_with_2, boxes_with_3))
+print("Checksum: {}".format(boxes_with_2 * boxes_with_3))

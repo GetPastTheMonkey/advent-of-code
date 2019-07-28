@@ -38,4 +38,4 @@ nr_of_generations = 20
 for gen in range(nr_of_generations):
     plants = grow(plants)
 
-print "Sum of all plant indices is: {}".format(sum(plants))
+print("Sum of all plant indices is: {}".format(sum(plants)))

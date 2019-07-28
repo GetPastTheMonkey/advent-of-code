@@ -75,7 +75,7 @@ for instruction in instruction_list:
 
 solved = False
 while not solved:
-    for instruction, opcode_set in possible_opcodes.iteritems():
+    for instruction, opcode_set in possible_opcodes.items():
         if len(opcode_set) == 1:
             for instr in possible_opcodes.keys():
                 if instr != instruction:
@@ -85,7 +85,7 @@ while not solved:
         solved = True
 
 opcodes = dict()
-for instruction, opcode_set in possible_opcodes.iteritems():
+for instruction, opcode_set in possible_opcodes.items():
     opcodes[list(opcode_set)[0]] = instruction
 
 registers = [0, 0, 0, 0]
@@ -93,5 +93,5 @@ registers = [0, 0, 0, 0]
 for operation in operations:
     registers = opcodes[operation[0]](registers, operation[1], operation[2], operation[3])
 
-print "The registers have the following values: {}".format(registers)
-print "The solution therefore is {}".format(registers[0])
+print("The registers have the following values: {}".format(registers))
+print("The solution therefore is {}".format(registers[0]))

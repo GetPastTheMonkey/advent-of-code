@@ -39,9 +39,9 @@ for i in range(ord('A'), ord('Z') + 1):
     polymer_to_test = sub('[' + chr(i) + chr(i + 32) + ']', '', original_polymer)
     current_char_polymer = fully_react_polymer(polymer_to_test)
     char_dict[chr(i)] = len(current_char_polymer)
-    print "Finished with character {}".format(chr(i))
+    print("Finished with character {}".format(chr(i)))
 
 min_char = min(char_dict, key=(lambda x: char_dict[x]))
-print "The shortest polymer can be achieved by removing type '{}' and it is {} characters long".format(min_char,
+print("The shortest polymer can be achieved by removing type '{}' and it is {} characters long".format(min_char,
                                                                                                        char_dict[
-                                                                                                           min_char])
+                                                                                                           min_char]))

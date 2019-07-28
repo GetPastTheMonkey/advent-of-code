@@ -1,7 +1,7 @@
 from os.path import join, dirname, realpath
 
 with open(join(dirname(realpath(__file__)), "input.txt")) as f:
-    search_digits = map(int, f.readline().strip())
+    search_digits = list(map(int, f.readline().strip()))
 
 scores = [3, 7]
 elf_1 = 0
@@ -25,4 +25,4 @@ while True:
         solution = len(scores) - len(search_digits) - 1
         break
 
-print "The string appeared after {} recipes".format(solution)
+print("The string appeared after {} recipes".format(solution))

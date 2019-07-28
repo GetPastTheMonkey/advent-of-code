@@ -1,6 +1,6 @@
 from os.path import join, dirname, realpath
 
-known_frequencies = []
+known_frequencies = set()
 current_sum = 0
 solution = None
 round = 0
@@ -10,7 +10,7 @@ with open(join(dirname(realpath(__file__)), "input.txt")) as f:
 
 while solution is None:
     round += 1
-    print "Starting round {}, solution is {}, current sum is {}, known frequencies has {} entries".format(round, solution, current_sum, len(known_frequencies))
+    print("[DEBUG] Starting round {}, current sum is {}, known frequencies has {} entries".format(round, current_sum, len(known_frequencies)))
     for next_change in frequency_changes:
         current_sum += next_change
 
@@ -18,6 +18,6 @@ while solution is None:
             solution = current_sum
             break
         else:
-            known_frequencies.append(current_sum)
+            known_frequencies.add(current_sum)
 
-print "The solution is: {}".format(solution)
+print("The solution is: {}".format(solution))

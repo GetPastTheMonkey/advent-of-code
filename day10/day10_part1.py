@@ -49,27 +49,27 @@ def draw(pts, it):
         if canvas_min_x <= x <= canvas_max_x and canvas_min_y <= y <= canvas_max_y:
             pt_list.append((x-canvas_min_x, y-canvas_min_y))
     if not pt_list:
-        print "[DEBUG] Not drawing iteration {}, no point is visible".format(it)
+        print("[DEBUG] Not drawing iteration {}, no point is visible".format(it))
         return
 
     # There is at least one point on the canvas
 
     if len(pt_list) < len(pts):
-        print "[DEBUG] Not drawing iteration {}, not all points are visible".format(it)
+        print("[DEBUG] Not drawing iteration {}, not all points are visible".format(it))
         return
 
     im = Image.new("RGB", (canvas_max_x-canvas_min_x, canvas_max_y-canvas_min_y))
     d = ImageDraw.Draw(im)
     d.point(pt_list, (255, 255, 255))
     im.save(join(dirname(realpath(__file__)), "images", "image_{}.png".format(it)))
-    print "[DEBUG] Drawn iteration {}, {} pixels were on canvas".format(it, len(pt_list))
+    print("[DEBUG] Drawn iteration {}, {} pixels were on canvas".format(it, len(pt_list)))
 
 
 def should_finish(pts):
     # Finish when the first point leaves the draw area
     for x, y, _, _ in pts:
         if x < min_x or x > max_x or y < min_y or y > max_y:
-            print "[DEBUG] A point left the area, safe to finish"
+            print("[DEBUG] A point left the area, safe to finish")
             return True
     return False
 

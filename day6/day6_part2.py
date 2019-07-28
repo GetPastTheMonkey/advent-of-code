@@ -32,4 +32,4 @@ for i in range(max_x+1):
         if distance_sum < threshold:
             final_sum += 1
 
-print "There are {} points that have a summed up distance less than {}".format(final_sum, threshold)
+print("There are {} points that have a summed up distance less than {}".format(final_sum, threshold))

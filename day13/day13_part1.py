@@ -80,4 +80,4 @@ class Controller:
 with open(join(dirname(realpath(__file__)), "input.txt")) as f:
     controller = Controller(f)
 collision = controller.run()
-print "Collision happened at coordinate {}".format(str(collision).replace(" ", ""))
+print("Collision happened at coordinate {}".format(str(collision).replace(" ", "")))

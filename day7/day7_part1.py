@@ -16,7 +16,7 @@ with open(join(dirname(realpath(__file__)), "input.txt")) as f:
 
 def find_empty_requirements(reqs):
     return_list = []
-    for key, value in reqs.iteritems():
+    for key, value in reqs.items():
         if not value:
             return_list.append(key)
     return return_list
@@ -30,7 +30,7 @@ def find_next_step(reqs):
 
 def update_requirements(req, step):
     resulting_requirements = dict()
-    for key, values in req.iteritems():
+    for key, values in req.items():
         if key != step:
             new_values = []
             for value in values:
@@ -44,8 +44,9 @@ def do_a_step(req):
     next_step = find_next_step(req)
     return next_step, update_requirements(req, next_step)
 
+
 solution = []
 while requirements:
     step, requirements = do_a_step(requirements)
     solution.append(step)
-print "The requirements should be completed in the following order: {}".format(''.join(solution))
+print("The requirements should be completed in the following order: {}".format(''.join(solution)))

@@ -51,9 +51,9 @@ while gen < nr_of_generations:
     new_delta = new_sum - previous_sum
 
     if previous_delta == new_delta:
-        print "[GENERATION {}] Delta stayed the same (at {})".format(gen, new_delta)
+        print("[GENERATION {}] Delta stayed the same (at {})".format(gen, new_delta))
         break
 
 final_sum = new_sum + (new_delta * (nr_of_generations - gen))
 
-print "Sum of all plant indices is: {}".format(final_sum)
+print("Sum of all plant indices is: {}".format(final_sum))

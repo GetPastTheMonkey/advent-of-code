@@ -40,5 +40,4 @@ while current_marble <= marble_max:
     current_marble += 1
     current_player = (current_player+1) % player_count
 
-print "Game finished"
-print "The maximum score was: {}".format(max(point_counter))
+print("The maximum score was: {}".format(max(point_counter)))

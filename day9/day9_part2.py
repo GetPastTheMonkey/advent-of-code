@@ -1,8 +1,8 @@
 from os.path import join, dirname, realpath
 from re import match
 
-print "[IMPORTANT] This implementation is very slow (but it still works). It might take up to 2 hours to finish..."
-print "[IMPORTANT] To track progress, it will output the number of rounds that are left every 100'000 rounds"
+print("[IMPORTANT] This implementation is very slow (but it still works). It might take up to 2 hours to finish...")
+print("[IMPORTANT] To track progress, it will output the number of rounds that are left every 100'000 rounds")
 
 with open(join(dirname(realpath(__file__)), "input.txt")) as f:
     m = match("(?P<p>\d+) players; last marble is worth (?P<m>\d+) points", f.readline())
@@ -44,7 +44,7 @@ while current_marble <= marble_max:
     current_player = (current_player+1) % player_count
 
     if (marble_max - current_marble) % 1e5 == 0:
-        print marble_max - current_marble
+        print(marble_max - current_marble)
 
-print "Game finished"
-print "The maximum score was: {}".format(max(point_counter))
+print("Game finished")
+print("The maximum score was: {}".format(max(point_counter)))

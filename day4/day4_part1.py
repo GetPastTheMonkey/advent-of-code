@@ -1,3 +1,4 @@
+from functools import cmp_to_key
 from os.path import join, dirname, realpath
 from re import match
 
@@ -30,7 +31,7 @@ def sorting(tuple1, tuple2):
     return minute1 - minute2
 
 
-guard_schedule.sort(cmp=sorting)
+guard_schedule.sort(key=cmp_to_key(sorting))
 
 current_guard = None
 sleep_start = None
@@ -67,8 +68,8 @@ for _, _, _, _, mi, action in guard_schedule:
         # Reset sleep start
         sleep_start = None
 
-max_guard_id, _ = max(guard_bucket.iteritems(), key=(lambda k: guard_bucket[k[0]]))
-max_sleep_min, _ = max(guard_minute_bucket[max_guard_id].iteritems(),
+max_guard_id, _ = max(guard_bucket.items(), key=(lambda k: guard_bucket[k[0]]))
+max_sleep_min, _ = max(guard_minute_bucket[max_guard_id].items(),
                        key=(lambda k: guard_minute_bucket[max_guard_id][k[0]]))
-print "Guard {} slept the most of all guards. He was most asleep during minute {}".format(max_guard_id, max_sleep_min)
-print "Solution: {}".format(max_guard_id * max_sleep_min)
+print("Guard {} slept the most of all guards. He was most asleep during minute {}".format(max_guard_id, max_sleep_min))
+print("Solution: {}".format(max_guard_id * max_sleep_min))

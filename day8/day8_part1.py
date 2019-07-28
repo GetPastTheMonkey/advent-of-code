@@ -23,4 +23,4 @@ with open(join(dirname(realpath(__file__)), "input.txt")) as f:
 
 file_input = [int(x) for x in file_input.split()]
 tree = TreeNode(file_input)
-print tree.metadata_sum()
+print(tree.metadata_sum())

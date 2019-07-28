@@ -29,4 +29,4 @@ for (_, x, y, width, height) in claims:
 
 # Loop through grid and count number of entries with >= 2
 count = sum([1 for row in grid for x in row if x >= 2])
-print "There are {} square inches with 2 or more claims".format(count)
+print("There are {} square inches with 2 or more claims".format(count))

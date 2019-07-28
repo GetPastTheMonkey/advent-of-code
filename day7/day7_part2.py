@@ -26,7 +26,7 @@ with open(join(dirname(realpath(__file__)), "input.txt")) as f:
 
 def find_empty_tasks(req):
     empty_list = []
-    for key, data in req.iteritems():
+    for key, data in req.items():
         if not data["requirements"] and not data["has_worker"]:
             empty_list.append(key)
     empty_list.sort()
@@ -36,7 +36,7 @@ def find_empty_tasks(req):
 def distribute_work(req, w):
     empty_tasks = find_empty_tasks(req)
     if empty_tasks:
-        print "[ITERATION {}] - Tasks with empty requirements: {}".format(iterations, empty_tasks)
+        print("[ITERATION {}] - Tasks with empty requirements: {}".format(iterations, empty_tasks))
     for worker in w:
         # If the worker is idle and there is still an empty task, then work on it
         if worker["task"] is None and len(empty_tasks) > 0:
@@ -60,14 +60,14 @@ def remove_finished_tasks(req, w):
     for worker in w:
         if worker["task"] is not None and worker["remaining"] == 0:
             # Remove task from req dict
-            print "[ITERATION {}] - Finished task {}".format(iterations, worker["task"])
+            print("[ITERATION {}] - Finished task {}".format(iterations, worker["task"]))
             req.pop(worker["task"])
             removed_tasks.append(worker["task"])
             worker["task"] = None
 
     # Create new task dict
     new_tasks = dict()
-    for key, value in req.iteritems():
+    for key, value in req.items():
         new_tasks[key] = {
             "requirements": [],
             "duration": value["duration"],
@@ -87,4 +87,4 @@ while tasks:
     iterations += 1
     tasks, workers = remove_finished_tasks(tasks, workers)
 
-print "Finished after {} iterations (with {} workers)".format(iterations, worker_count)
+print("Finished after {} iterations (with {} workers)".format(iterations, worker_count))

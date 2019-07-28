@@ -1,3 +1,4 @@
+from functools import cmp_to_key
 from os.path import join, dirname, realpath
 from re import match
 
@@ -30,7 +31,7 @@ def sorting(tuple1, tuple2):
     return minute1 - minute2
 
 
-guard_schedule.sort(cmp=sorting)
+guard_schedule.sort(key=cmp_to_key(sorting))
 
 current_guard = None
 sleep_start = None
@@ -65,15 +66,15 @@ for _, _, _, _, mi, action in guard_schedule:
 
 # Find max minute for every guard
 max_per_guard = dict()
-for guard, minute_bucket in guard_minute_bucket.iteritems():
+for guard, minute_bucket in guard_minute_bucket.items():
     max_minute = max(minute_bucket, key=minute_bucket.get)
     max_per_guard[guard] = (max_minute, minute_bucket[max_minute])
 
 # Find max minute of all guards
 max_guard = max(max_per_guard, key=(lambda k: max_per_guard[k][1]))
-print "Guard {} slept most frequently of all guards! He slept {} times during minute {}".format(max_guard,
+print("Guard {} slept most frequently of all guards! He slept {} times during minute {}".format(max_guard,
                                                                                                 max_per_guard[
                                                                                                     max_guard][1],
                                                                                                 max_per_guard[
-                                                                                                    max_guard][0])
-print "Solution: {}".format(max_guard * max_per_guard[max_guard][0])
+                                                                                                    max_guard][0]))
+print("Solution: {}".format(max_guard * max_per_guard[max_guard][0]))

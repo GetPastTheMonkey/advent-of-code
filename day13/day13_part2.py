@@ -83,7 +83,7 @@ class Controller:
                 if cart.position() == cart2.position() and cart != cart2:
                     cart.crash()
                     cart2.crash()
-                    print "Crash happened at position {}".format(cart.position())
+                    print("Crash happened at position {}".format(cart.position()))
 
         # Remove crashed carts
         self._carts = [c for c in self._carts if not c.is_crashed()]
@@ -92,4 +92,4 @@ class Controller:
 with open(join(dirname(realpath(__file__)), "input.txt")) as f:
     controller = Controller(f)
 last_cart = controller.run()
-print "Last cart is at position {}".format(str(last_cart.position()).replace(" ", ""))
+print("Last cart is at position {}".format(str(last_cart.position()).replace(" ", "")))

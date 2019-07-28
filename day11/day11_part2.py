@@ -50,4 +50,4 @@ for size in range(min(grid_height, grid_width)):
                 max_y = j + 1
                 max_size = size
 
-print "({},{},{}) has maximum value of {}".format(max_x, max_y, max_size, maximum)
+print("({},{},{}) has maximum value of {}".format(max_x, max_y, max_size, maximum))
