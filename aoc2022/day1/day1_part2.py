@@ -4,7 +4,7 @@ from utils import get_input_lines
 def main():
     maximums = [0, 0, 0]
     current = 0
-    for line in map(lambda x: x.strip(), get_input_lines(__file__)):
+    for line in get_input_lines(__file__):
         if line:
             current += int(line)
         else:
