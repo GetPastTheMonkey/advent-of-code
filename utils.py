@@ -1,5 +1,10 @@
 from os.path import realpath, dirname, join
-from typing import IO
+from typing import IO, Generator
+
+
+def chunk(arr: list, size: int) -> Generator:
+    for i in range(0, len(arr), size):
+        yield arr[i:i + size]
 
 
 def get_input(file) -> IO:

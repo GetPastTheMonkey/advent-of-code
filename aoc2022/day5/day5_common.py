@@ -1,11 +1,6 @@
 import re
 
-from utils import get_input
-
-
-def chunk(arr, size):
-    for i in range(0, len(arr), size):
-        yield arr[i:i+size]
+from utils import get_input, chunk
 
 
 def day5_solve(reverse: bool):
