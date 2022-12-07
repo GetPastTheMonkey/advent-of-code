@@ -1,11 +1,11 @@
 from functools import reduce
 from os.path import realpath, dirname, join
-from typing import IO, Generator, List, Any, TypeVar
+from typing import IO, Generator, List, Any, TypeVar, Union
 
 T = TypeVar("T")
 
 
-def chunk(arr: List[T], size: int) -> Generator[T, Any, None]:
+def chunk(arr: Union[List[T], str], size: int) -> Generator[T, Any, None]:
     for i in range(0, len(arr), size):
         yield arr[i:i + size]
 
