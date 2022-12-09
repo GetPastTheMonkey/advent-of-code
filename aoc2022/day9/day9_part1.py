@@ -1,0 +1,4 @@
+from aoc2022.day9.day9_common import day9_solve
+
+if __name__ == '__main__':
+    day9_solve(snake_length=2)
