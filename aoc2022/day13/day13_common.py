@@ -1,3 +1,5 @@
+import json
+
 from utils import get_input_lines
 
 
@@ -27,7 +29,7 @@ def load_pairs():
         if len(line) == 0:
             continue
 
-        line = eval(line)
+        line = json.loads(line)
 
         if left is None:
             left = line
